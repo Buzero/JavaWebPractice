@@ -14,6 +14,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cxy.javaweb.dao.BookInfoDao;
+import com.cxy.javaweb.dao.IBookInfoDao;
+import com.cxy.javaweb.entity.BookInfo;
+
 /**
  * Servlet implementation class BookIndex
  */
@@ -34,29 +38,13 @@ public class BookIndex extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		ArrayList<String> bookNames = new ArrayList<String>();
-		Connection con;
 		
-		try {
-			Class.forName("org.postgresql.Driver");
-			con = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/bookdb", "postgres", "1");
-			Statement stm = con.createStatement();
-			ResultSet rs = stm.executeQuery("select *from bookInfo");
-			while(rs.next()) {
-				bookNames.add(rs.getString("bookName"));
-			}
-			rs.close();
-			con.close();
-		}catch(Exception e) {
-			bookNames.add(e.toString());
-		}
-		
+		IBookInfoDao iBookInfoDao = new BookInfoDao();//BookInfoDaoMysql
+		BookInfo[] bookInfos = iBookInfoDao.select(new BookInfo("Programming"));
 		StringBuilder strBuilder = new StringBuilder();
-		Iterator<String> it = bookNames.iterator();
-		while(it.hasNext()) {
-			strBuilder.append(it.next());
+		for(BookInfo bookInfo : bookInfos) {
+			strBuilder.append(bookInfo.getBookName());
 		}
-		
 		response.getWriter().append(strBuilder.toString());
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
