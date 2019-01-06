@@ -1,6 +1,6 @@
 package com.cxy.javaweb.servlet;
 
-import java.io.IOException;
+/*mport java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -16,27 +16,27 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cxy.javaweb.dao.BookInfoDao;
 import com.cxy.javaweb.dao.IBookInfoDao;
-import com.cxy.javaweb.entity.BookInfo;
+import com.cxy.javaweb.entity.BookInfo;*/
 
 /**
  * Servlet implementation class BookIndex
  */
-@WebServlet("/BookIndex")
+/**@WebServlet("/BookIndex")
 public class BookIndex extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+       */
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BookIndex() {
+    /*public BookIndex() {
         super();
         // TODO Auto-generated constructor stub
-    }
+    }*/
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
 		IBookInfoDao iBookInfoDao = new BookInfoDao();//BookInfoDaoMysql
@@ -48,14 +48,14 @@ public class BookIndex extends HttpServlet {
 		response.getWriter().append(strBuilder.toString());
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+	}*/
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/*protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
-}
+}*/

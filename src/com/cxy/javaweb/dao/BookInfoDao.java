@@ -1,6 +1,6 @@
 package com.cxy.javaweb.dao;
 
-import java.sql.Connection;
+/*import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -61,4 +61,4 @@ public class BookInfoDao implements IBookInfoDao{
 		return bookInfos.toArray(new BookInfo[0]);
 	}
 
-}
+}*/
